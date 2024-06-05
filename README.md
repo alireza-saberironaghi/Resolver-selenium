@@ -1,3 +1,6 @@
+
+![Selenium](https://github.com/alireza-saberironaghi/Resolver-selenium/assets/98224391/b3001ded-791b-4a98-a7b9-a3424c696c70)
+
 # Resolver Technical Assessment (Selenium with Java)
 
 This repository is created to complete the technical assessment for the QA Engineer position at Resolver.
