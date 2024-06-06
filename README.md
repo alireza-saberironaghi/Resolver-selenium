@@ -1,3 +1,5 @@
+![Selenium](https://github.com/alireza-saberironaghi/Resolver-selenium/assets/98224391/b3001ded-791b-4a98-a7b9-a3424c696c70)
+
 # Resolver Technical Assessment (Selenium with Java)
 
 This repository is created to complete the technical assessment for the QA Engineer position at Resolver.
@@ -11,6 +13,12 @@ The repository utilizes Selenium with Java and is organized into several key par
 - All the page objects are organized in separate files in the [`pageobjects`](https://github.com/alireza-saberironaghi/Resolver-selenium/tree/main/src/main/java/resolver2/pageobjects) directory.
 - The guide file, which contains details on test cases and requirements, can be found in the [`guide.html`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/guide.html) file.
 - The index file, which details the system under test, can be found in the [`index.html`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/index.html) file.
+
+## Sample Result
+
+Here is a sample picture of the test result:
+
+![report](https://github.com/alireza-saberironaghi/Resolver-selenium/assets/98224391/6af16b6e-a888-4fa8-b917-5c87b86c0125)
 
 ## Installation
 
