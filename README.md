@@ -11,8 +11,8 @@ The repository utilizes Selenium with Java and is organized into several key par
 - The next part is the helper base for test file. 
   The helper base file can be found in the [`HelperBase.java`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/src/main/java/helperbase/HelperBase.java).
 - All the page objects are organized in separate files in the [`pageobjects`](https://github.com/alireza-saberironaghi/Resolver-selenium/tree/main/src/main/java/resolver2/pageobjects) directory.
-- The guide file, which contains details on test cases and requirements, can be found in the [`guide.html`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/guide.html) file.
-- The index file, which details the system under test, can be found in the [`index.html`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/index.html) file.
+- The guide file, which contains details on test cases and requirements, can be found in the [`guide.html`](https://alexqa.io/Resolver/guide.html) file.
+- The index file, which details the system under test, can be found in the [`index.html`](https://alexqa.io/Resolver/index.html) file.
 
 ## Sample Result
 
@@ -51,8 +51,8 @@ To execute the tests, you can use the following commands.
 - **Test Script**: Located in the [`IndexTest.java`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/src/test/java/resolver2/resolver2/IndexTest.java) file.
 - **Helper Base**: Common helper functions are in the [`HelperBase.java`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/src/main/java/helperbase/HelperBase.java).
 - **Page Objects**: Organized in separate files under the [`pageobjects`](https://github.com/alireza-saberironaghi/Resolver-selenium/tree/main/src/main/java/resolver2/pageobjects) directory.
-- **Guide**: Contains details on test cases and requirements in the [`guide.html`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/guide.html) file.
-- **Index**: Details the system under test in the [`index.html`](https://github.com/alireza-saberironaghi/Resolver-selenium/blob/main/index.html) file.
+- **Guide**: Contains details on test cases and requirements in the [`guide.html`](https://alexqa.io/Resolver/guide.html) file.
+- **Index**: Details the system under test in the [`index.html`](https://alexqa.io/Resolver/index.html) file.
 
 ## Good Practices
 
