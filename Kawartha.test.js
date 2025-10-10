@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, devices, chromium, firefox, webkit } from '@playwright/test';
 import https from 'https';
 
 const Data = {
@@ -8,6 +8,23 @@ const Data = {
     'https://kawartha.sites.test.thirdstream.ca/deposits/en/app/flow/welcome',
     'https://kawartha.sites.staging.thirdstream.ca/deposits/en/app/flow/welcome',
     'https://apply.kawarthacu.com/deposits/en/app/flow/welcome'
+  ],
+     devices: [
+    { name: 'Desktop Chrome',  engine: 'chromium', channel: 'chrome',  config: null },
+    { name: 'Desktop Firefox', engine: 'firefox',  channel: undefined,  config: null },
+    { name: 'Desktop Safari',  engine: 'webkit',   channel: undefined,  config: null },
+    { name: 'Desktop Edge',    engine: 'chromium', channel: 'msedge',   config: null },
+    { name: 'iPhone 14',       engine: 'chromium', channel: undefined,  config: devices['iPhone 14'] },
+    { name: 'iPhone 14 Pro',   engine: 'chromium', channel: undefined,  config: devices['iPhone 14 Pro'] },
+    { name: 'iPhone 13',       engine: 'chromium', channel: undefined,  config: devices['iPhone 13'] },
+    { name: 'iPhone 12',       engine: 'chromium', channel: undefined,  config: devices['iPhone 12'] },
+    { name: 'iPhone SE',       engine: 'chromium', channel: undefined,  config: devices['iPhone SE'] },
+    { name: 'iPad Pro',        engine: 'chromium', channel: undefined,  config: devices['iPad Pro'] },
+    { name: 'iPad Mini',       engine: 'chromium', channel: undefined,  config: devices['iPad Mini'] },
+    { name: 'Samsung Galaxy S9+', engine: 'chromium', channel: undefined, config: devices['Galaxy S9+'] },
+    { name: 'Samsung Galaxy Note 10', engine: 'chromium', channel: undefined, config: devices['Galaxy Note 10'] },
+    { name: 'Samsung Galaxy Tab S4', engine: 'chromium', channel: undefined, config: devices['Galaxy Tab S4'] },
+    { name: 'Pixel 5',         engine: 'chromium', channel: undefined,  config: devices['Pixel 5'] }
   ],
   users: [
     {
@@ -214,6 +231,9 @@ const getUserByName = (name) => {
 // 🌐 Select Environment
 const environment = Data.environments[1]; // 0 = Dev, 1 = QA, 2 = Test, 3 = Staging, 4 = Prod
 
+// 📱 Select Device
+const selectedDevice = Data.devices[3]; // 0=Desktop Chrome, 1=Desktop Firefox, 2=Desktop Safari, 3=Desktop Edge, 4=iPhone 14, 5=iPhone 14 Pro, 6=iPhone 13, 7=iPhone 12, 8=iPhone SE, 9=iPad Pro, 10=iPad Mini, 11=Samsung Galaxy S9+, 12=Samsung Galaxy Note 10, 13=Samsung Galaxy Tab S4, 14=Pixel 5
+
 // 👤 Select Main User
 const selectedUser = getUserByName('Pearl - ON'); // ['Pearl-Completed, 'Pearl-Review', 'Pearl-Declined' 'Tim', 'Nicole','Marty', 'Michael', 'Mandy','Ming' ,'Kara']
 
@@ -227,7 +247,6 @@ const mainUserEmail = 'alex.saberi@thirdstream.ca';
 const mainUserCell = '6478543392';
 const jointUserEmail = 'alex.saberi1@thirdstream.ca';
 const jointUserCell = '6478543394';
-const selectPauseModeStatus = 'Deactive';
 
 
 // ⚙️ Select Options
@@ -236,6 +255,7 @@ const selectOpenAnotherAccount = Data.accountOptions.openAnotherAccount[0]; // 0
 // Submit Application?
 const selectSubmissionStatus = Data.accountOptions.submissionStatus[1]; // 0 = Yes, 1 = No
 // Pause Mode?
+const selectPauseModeStatus = 'Deactive'; // 'Active' or 'Deactive'
 
 
 // ===========================
@@ -296,8 +316,29 @@ const selectCard1 = Data.accountOptions.card[0] // ['Debit Mastercard', 'Debit c
 
 
 
-test('Kawartha_RDO', async ({ page }) => {
+test('Kawartha_RDO', async ({ }) => {
   test.setTimeout(1800000); // Set timeout to 90 seconds (90000 milliseconds)
+
+    // --- NEW: Launch the right engine based on selectedDevice ---
+  const browserType =
+    selectedDevice.engine === 'firefox' ? firefox :
+    selectedDevice.engine === 'webkit'  ? webkit  :
+    chromium;
+
+  const browser = await browserType.launch({
+    headless: false,
+    channel: selectedDevice.channel // e.g., 'chrome' or 'msedge' when set
+  });
+
+  // Apply device emulation if present
+  const context = await browser.newContext({
+    ...(selectedDevice.config ?? {})
+  });
+
+  const page = await context.newPage();
+  console.log(`🔧 Running test on: ${selectedDevice.name} [engine=${selectedDevice.engine}${selectedDevice.channel ? `, channel=${selectedDevice.channel}` : ''}]`);
+
+
   playwrightCore('Kawartha_RDO');
   if (!selectedUser) {
     throw new Error('User not found');
@@ -482,9 +523,7 @@ test('Kawartha_RDO', async ({ page }) => {
       await page.getByLabel('What is the amount you want').click();
       await page.getByLabel('What is the amount you want').fill('1000'); // options: 1000, 2000, 3000
 
-      // jadiiiiiiiiiiid
-      //a debit card?
-      // await page.locator('p-radiobutton').filter({ hasText: selectCard1 }).locator('div').nth(2).click()
+ 
 
       await page.getByRole('button', { name: 'Next' }).click();
     }
@@ -982,7 +1021,6 @@ function generateRandomSIN() {
   } while (!luhnChecksum(sin));
   return sin.toString();
 }
-
 
 
 
