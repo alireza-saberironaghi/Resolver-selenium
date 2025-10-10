@@ -227,6 +227,7 @@ const mainUserEmail = 'alex.saberi@thirdstream.ca';
 const mainUserCell = '6478543392';
 const jointUserEmail = 'alex.saberi1@thirdstream.ca';
 const jointUserCell = '6478543394';
+const selectPauseModeStatus = 'Deactive';
 
 
 // ⚙️ Select Options
@@ -235,7 +236,6 @@ const selectOpenAnotherAccount = Data.accountOptions.openAnotherAccount[0]; // 0
 // Submit Application?
 const selectSubmissionStatus = Data.accountOptions.submissionStatus[1]; // 0 = Yes, 1 = No
 // Pause Mode?
-const selectPauseModeStatus = 'Deactive'; // 'Active' or 'Deactive'
 
 
 // ===========================
@@ -982,6 +982,7 @@ function generateRandomSIN() {
   } while (!luhnChecksum(sin));
   return sin.toString();
 }
+
 
 
 
