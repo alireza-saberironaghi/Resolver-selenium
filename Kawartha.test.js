@@ -326,7 +326,7 @@ test('Kawartha_RDO', async ({ }) => {
     chromium;
 
   const browser = await browserType.launch({
-    headless: false,
+    // headless: false,
     channel: selectedDevice.channel // e.g., 'chrome' or 'msedge' when set
   });
 
@@ -1021,6 +1021,7 @@ function generateRandomSIN() {
   } while (!luhnChecksum(sin));
   return sin.toString();
 }
+
 
 
 
