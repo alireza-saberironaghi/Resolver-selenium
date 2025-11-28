@@ -1,0 +1,25 @@
+{
+  "tenants": [
+    {
+      "tenant": "kawartha",
+      "approved": "pearl",
+      "review": "tim",
+      "gemalto": "alex",
+      "declined": "Ihor"
+    },
+    {
+      "tenant": "Sunshine",
+      "approved": "Zahra",
+      "review": "Alireza",
+      "gemalto": "Maryam",
+      "declined": "Majid"
+    },
+    {
+      "tenant": "Assiniboine",
+      "approved": "albert",
+      "review": "iham",
+      "gemalto": "soghra",
+      "declined": "kobra"
+    }
+  ]
+}
