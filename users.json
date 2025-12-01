@@ -1,28 +1,71 @@
 {
   "tenants": [
     {
-      "tenant": "kawarthaaaa",
-      "approved": "pearl11111",
-      "review": "tim22222",
-      "gemalto": "alex",
-      "declined": "Ihor"
+      "tenant": "Assiniboine RDO",
+      "approved": "Kevin - MB",
+      "review": "Charlyne - MB",
+      "gemalto": "Richard - MB",
+      "declined": "Jaime - MB"
     },
     {
-      "tenant": "Sunshine",
-      "approved": "Zahra",
-      "review": "Alireza",
-      "gemalto": "Maryam",
-      "declined": "Majid"
+      "tenant": "Kawartha RDO",
+      "approved": "Pearl - ON",
+      "review": "Tim - ON",
+      "gemalto": "Kevin - ON",
+      "declined": "N/A"
     },
     {
-      "tenant": "Assiniboine",
-      "approved": "albert",
-      "review": "iham",
-      "gemalto": "soghra",
-      "declined": "kobra"
+      "tenant": "Rocky RDO",
+      "approved": "Pearl - ON",
+      "review": "Tim - ON",
+      "gemalto": "Kevin - ON",
+      "declined": "N/A"
+    },
+    {
+      "tenant": "Sunshine RDO",
+      "approved": "Muhammad - BC",
+      "review": "Helen - BC",
+      "gemalto": "David - BC",
+      "declined": "David - BC"
+    },
+    {
+      "tenant": "Wealthone RDO",
+      "approved": "Chrit - BC",
+      "review": "Sherri - BC",
+      "gemalto": "Helen - BC",
+      "declined": "Helen - BC"
+    },
+    {
+      "tenant": "Hubert RDO",
+      "approved": "Helen - BC",
+      "review": "Chrit - BC",
+      "gemalto": "Sherri - BC",
+      "declined": "Sherii - BC"
+    },
+    {
+      "tenant": "Vancity RDO",
+      "approved": "Helen - BC",
+      "review": "Chrit - BC",
+      "gemalto": "Sherri - BC",
+      "declined": "Sherii - BC"
+    },
+    {
+      "tenant": "Pathwise RLO",
+      "approved": "Pearl - ON",
+      "review": "Tim - ON",
+      "gemalto": "Kevin - ON",
+      "declined": "N/A"
+    },
+    {
+      "tenant": "Coastal RLO",
+      "approved": "Pearl - ON",
+      "review": "Tim - ON",
+      "gemalto": "Kevin - ON",
+      "declined": "N/A"
     }
   ]
 
 }
+
 
 
